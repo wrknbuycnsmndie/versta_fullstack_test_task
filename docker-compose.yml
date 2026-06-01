@@ -1,0 +1,32 @@
+services:
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: versta-backend
+    environment:
+      ConnectionStrings__OrdersDb: Data Source=/app/data/versta-orders.db
+    volumes:
+      - backend-data:/app/data
+    ports:
+      - "8080:8080"
+    networks:
+      - versta-network
+
+  frontend:
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile
+    container_name: versta-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - versta-network
+
+networks:
+  versta-network:
+
+volumes:
+  backend-data:
