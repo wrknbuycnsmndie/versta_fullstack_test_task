@@ -1,0 +1,20 @@
+@Versta.Orders.Api_HostAddress = http://localhost:5162
+
+GET {{Versta.Orders.Api_HostAddress}}/api/orders
+Accept: application/json
+
+###
+
+POST {{Versta.Orders.Api_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "senderCity": "Москва",
+  "senderAddress": "ул. Ленина, 1",
+  "recipientCity": "Санкт-Петербург",
+  "recipientAddress": "Невский проспект, 10",
+  "weightKg": 12.5,
+  "pickupDate": "2030-06-15T00:00:00Z"
+}
+
+###

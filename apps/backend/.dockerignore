@@ -1,0 +1,6 @@
+bin
+obj
+src/Versta.Orders.Api/bin
+src/Versta.Orders.Api/obj
+src/Versta.Orders.Api/versta-orders.db
+.DS_Store
